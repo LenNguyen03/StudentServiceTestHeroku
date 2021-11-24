@@ -8,12 +8,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.List;
+
 @Service
 public class StudentService {
     @Autowired
     private StudentRepository studentRepository;
     @Autowired
     private RestTemplate restTemplate;
+
+
+    public List<Student> getAll(){
+        return studentRepository.findAll();
+    }
 
     public Student saveStudent(Student student) {
         return studentRepository.save(student);

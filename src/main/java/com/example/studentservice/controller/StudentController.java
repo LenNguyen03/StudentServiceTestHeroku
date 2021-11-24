@@ -10,6 +10,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("student")
 @Slf4j
@@ -17,6 +19,11 @@ public class StudentController {
     @Autowired
     private StudentService studentService;
 
+
+    @GetMapping("/all/")
+    public List<Student> getAllStudent(){
+        return studentService.getAll();
+    }
 
     @PostMapping("/")
     public Student saveUser(@RequestBody Student student){
