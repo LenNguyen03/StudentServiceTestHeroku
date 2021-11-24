@@ -31,7 +31,7 @@ public class StudentService {
         Student student = studentRepository.findById(studentId).get();
         vo.setStudent(student);
         Department department =
-                restTemplate.getForObject("http://localhost:9001/department/"
+                restTemplate.getForObject("https://khoaservice.herokuapp.com/department/"
                                 + student.getDepartmentId(),
                         Department.class);
 
