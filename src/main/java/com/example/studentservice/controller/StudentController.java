@@ -17,7 +17,7 @@ public class StudentController {
     @Autowired
     private StudentService studentService;
 
-    //Save
+
     @PostMapping("/")
     public Student saveUser(@RequestBody Student student){
 
@@ -25,7 +25,6 @@ public class StudentController {
     }
 
 
-    //Get All User and Department by id
     @GetMapping("/{id}")
     public ResponseTemplateVO getUserWithDepartment(@PathVariable("id")
                                                             Long studentId){
